@@ -1,61 +1,57 @@
-### Schema
-CREATE DATABASE inventory;
-USE inventory;
+-- ### Schema
+CREATE DATABASE shareTop;
+USE shareTop;
 
-CREATE TABLE Product
-(
-	id int NOT NULL AUTO_INCREMENT,
-	maker varchar(100),
-	model INT, DEFAULT false,
-	type VARCHAR(100),
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE Laptop (
-	code INT, 
-	model VARCHAR(50),
-	speed SMALLINT,
-	ram SMALLINT,
-	screen TINYINT,
-	price MONEY
-	PRIMARY KEY (code)
-);
-
-CREATE TABLE Tablet (
-	code INT, 
+CREATE TABLE Equipment (
+	code INT NOT NULL AUTO_INCREMENT, 
 	model VARCHAR(50),
 	speed SMALLINT,
 	ram SMALLINT,
 	screen TINYINT,
 	price MONEY,
+	description VARCHAR(255),
 	PRIMARY KEY (code)
 );
 
+CREATE TABLE UserAccount (
+	userID INT (50) NOT NULL AUTO_INCREMENT,
+	emailaddress VARCHAR (255),
+	password VARCHAR (50),
+	PRIMARY KEY (emailaddress)
+);
+
 CREATE TABLE Customer (
-	customer_id
-	first_name
-	last_name
-	email
-	address_id
-	active
-	create_date
-	last_update
+	emailaddress VARCHAR (255),
+	first_name VARCHAR (100),
+	last_name VARCHAR (100),
+	emailaddress VARCHAR (255),
+	address_id INT,
+	address VARCHAR (255),
+	address2 VARCHAR (255),
+	city VARCHAR (100),
+	state VARCHAR (2),
+	postal_code VARCHAR (5),
+	phone VARCHAR (11),
+	active 
+	create_date CURRENT_TIMESTAMP,
+	last_update CURRENT_TIMESTAMP,
+	PRIMARY KEY ()
 );
 
 CREATE TABLE Rental (
-	rental_id
-	rental_date
-	inventory_id/code
-	customer_id/username
-	return_date
-	last_update
-)
+	rental_id INT,
+	rental_date DATE,
+	inventory_id/code INT NOT NULL AUTO_INCREMENT,
+	username VARCHAR (255),
+	return_date DATE,
+	last_update CURRENT_TIMESTAMP
+);
 
 CREATE TABLE Payment (
-	payment_id
-	customer_id
-	rental_id
-	amount
-	payment_date
-	last_update
+	payment_id INT,
+	customer_id INT,
+	rental_id INT,
+	amount MONEY,
+	payment_date DATE,
+	last_update CURRENT_TIMESTAMP
 );
