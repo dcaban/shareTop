@@ -1,17 +1,31 @@
-// require dependencies
+//=========================//
+//==REQUIRE DEPENDENCIES==//
+//=========================//
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
-// instanciate express server
+//Instanciate express server
 const app = express();
 
-//middleware
+//==============//
+//==MIDDLEWARE==//
+//==============//
+//Use morgan to see request traffic in console
 app.use(morgan('dev'));
+//Use body-parser to parse body of responses
 app.use(bodyParser.json());
-//routes
 
-//start sever
+
+//==========//
+//==ROUTES==//
+//==========//
+
+
+
+//================//
+//==START SERVER==//
+//================//
 const port = process.env.PORT || 3000;
 app.listen(port);
 console.log(`Server listening on port ` + port);
