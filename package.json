@@ -1,0 +1,29 @@
+{
+  "name": "sharetopapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcaban/shareTop.git"
+  },
+  "author": "David Caban, ShaToya Jones, Bayrex Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcaban/shareTop/issues"
+  },
+  "homepage": "https://github.com/dcaban/shareTop#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "express": "^4.16.2",
+    "mocha": "^4.0.1",
+    "morgan": "^1.9.0",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.12.1",
+    "sequelize": "^4.22.8"
+  }
+}
