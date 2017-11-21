@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 //==========//
 //==ROUTES==//
 //==========//
-
+app.use('/users', require('./routes/htmlRoutes/usersRoutes'));
 
 
 //================//
