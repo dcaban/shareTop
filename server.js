@@ -8,6 +8,10 @@ const bodyParser = require('body-parser');
 //Instanciate express server
 const app = express();
 
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+
+app.use(bodyParser.urlencoded({ extended: false }));
 //==============//
 //==MIDDLEWARE==//
 //==============//
@@ -38,6 +42,12 @@ var lunches = [
   
   app.get("/", function(req, res) {
     res.render("index", {
+      foods: lunches,
+      eater: "david"
+    });
+  });
+  app.get("/form", function(req, res) {
+    res.render("createUser", {
       foods: lunches,
       eater: "david"
     });
