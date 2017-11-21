@@ -16,17 +16,16 @@ CREATE TABLE Equipment (
 );
 
 CREATE TABLE UserAccount (
-	userID INT AUTO_INCREMENT NOT NULL,
+	userID INT (11) NOT NULL AUTO_INCREMENT,
 	emailaddress VARCHAR (255),
 	password VARCHAR (50),
-	PRIMARY KEY (emailaddress)
+	PRIMARY KEY (userID)
 );
 
 CREATE TABLE Customer (
-	emailaddress VARCHAR (255),
-	first_name VARCHAR (100),
-	last_name VARCHAR (100),
 	emailaddress2 VARCHAR (255),
+	first_name VARCHAR (100),
+	last_name VARCHAR (100),	
 	address_id INT,
 	address VARCHAR (255),
 	address2 VARCHAR (255),
@@ -37,23 +36,23 @@ CREATE TABLE Customer (
 	-- active 
 	create_date DATE,
 	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (emailaddress)
+	PRIMARY KEY (emailaddress2)
 );
 
 -- CREATE TABLE Rental (
 -- 	rental_id INT,
 -- 	rental_date DATE,
--- 	inventory_id/code INT NOT NULL AUTO_INCREMENT,
+-- 	inventory_id INT AUTO_INCREMENT NOT NULL,
 -- 	username VARCHAR (255),
 -- 	return_date DATE,
--- 	last_update CURRENT_TIMESTAMP
+-- 	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 -- );
-
+-- 
 -- CREATE TABLE Payment (
 -- 	payment_id INT,
 -- 	customer_id INT,
 -- 	rental_id INT,
--- 	amount MONEY,
+-- 	amount DECIMAL,
 -- 	payment_date DATE,
--- 	last_update CURRENT_TIMESTAMP
+-- 	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 -- );
