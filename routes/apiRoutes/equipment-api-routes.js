@@ -12,7 +12,7 @@ module.exports = function(app) {
      // Find one Equipment with the code in req.params.id and return them to the user with res.json
     db.Equipment.findOne({
       where: {
-        id: req.params.code
+        id: req.params.id
       }
     }).then(function(dbEquipment) {
       res.json(dbAuthor);
@@ -31,7 +31,7 @@ module.exports = function(app) {
     // Delete the Equipment with the code available to us in req.params.code
     db.Equipment.destroy({
       where: {
-        id: req.params.code
+        id: req.params.id
       }
     }).then(function(dbEquipment) {
       res.json(dbEquipment);

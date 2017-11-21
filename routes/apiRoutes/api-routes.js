@@ -20,11 +20,11 @@ module.exports = function(app) {
     });
   });
 
-  // Get route for returning posts of a specific category
-  app.get("/api/posts/category/:category", function(req, res) {
+  // Get route for returning posts of a specific model
+  app.get("/api/posts/model/:model", function(req, res) {
     db.Post.findAll({
       where: {
-        category: req.params.category
+        category: req.params.model
       }
     })
     .then(function(dbPost) {
@@ -33,7 +33,7 @@ module.exports = function(app) {
   });
 
   // Get rotue for retrieving a single post
-  app.get("/api/posts/:id", function(req, res) {
+  app.get("/api/posts/:code", function(req, res) {
     db.Post.findOne({
       where: {
         id: req.params.id
@@ -58,7 +58,7 @@ module.exports = function(app) {
   });
 
   // DELETE route for deleting posts
-  app.delete("/api/posts/:id", function(req, res) {
+  app.delete("/api/posts/:code", function(req, res) {
     db.Post.destroy({
       where: {
         id: req.params.id
