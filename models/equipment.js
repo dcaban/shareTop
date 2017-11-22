@@ -8,14 +8,15 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
-      speed: {
-        type: DataTypes.INTEGER,
+      speed: { //Bay please add GB to frontend!
+        type: DataTypes.DECIMAL,
         allowNull: false,
         len: [1]
       },
-      ram: {
-        type: DataTypes.STRING,
-        defaultValue: "4GB"
+      ram: { //Bay please add GB to frontend!
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        len: [1]
       },
       screen_size: {
         type: DataTypes.INTEGER,

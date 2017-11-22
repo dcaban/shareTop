@@ -1,5 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
     var Customer = sequelize.define("Customer", {
+        emailaddress: {
+           type: DataTypes.STRING,
+           allowNull: false,
+           validate: {
+             len: [10]
+        }
+      },
       first_name: {
         type: DataTypes.STRING,
         allowNull: false,
