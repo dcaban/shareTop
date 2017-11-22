@@ -24,7 +24,7 @@ module.exports = function(app) {
   app.get("/api/posts/model/:model", function(req, res) {
     db.Post.findAll({
       where: {
-        category: req.params.model
+        model: req.params.model
       }
     })
     .then(function(dbPost) {
@@ -36,7 +36,7 @@ module.exports = function(app) {
   app.get("/api/posts/:code", function(req, res) {
     db.Post.findOne({
       where: {
-        id: req.params.id
+        code: req.params.code
       }
     })
     .then(function(dbPost) {

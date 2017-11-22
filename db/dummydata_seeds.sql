@@ -15,17 +15,17 @@ VALUES ("Macbook Air", 1.8, 8, "13", 20.00, "This is a Macbook Air!");
 INSERT INTO Equipment (model, speed, ram, screen, price, description)
 VALUES ("Microsoft Surface Pro 4", 2.1, 128, "12.3", 24.00, "A very nice Microsoft Surface Pro 4!");
 
-INSERT INTO UserAccount (emailaddress, password)
+INSERT INTO Passport (emailaddress, password)
 VALUES ("shareTop@gmail.com", "1234567");
 
-INSERT INTO UserAccount (emailaddress, password)
+INSERT INTO Passport (emailaddress, password)
 VALUES ("shareTop@yahoo.com", "abcdefghij");
 
-INSERT INTO UserAccount (emailaddress, password)
+INSERT INTO Passport (emailaddress, password)
 VALUES ("shareTop@hotmail.com", "98756poiji");
 
-INSERT INTO UserAccount (emailaddress, password)
+INSERT INTO Passport (emailaddress, password)
 VALUES ("shareTop@outlook.com", "zyxq753");
 
-INSERT INTO UserAccount (emailaddress, password)
+INSERT INTO Passport (emailaddress, password)
 VALUES ("jshatoyaj@yahoo.com", "25846q1zyx");

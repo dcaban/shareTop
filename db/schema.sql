@@ -1,21 +1,20 @@
--- ### Schema
 CREATE DATABASE shareTop;
 DROP TABLE IF EXISTS shareTop;
 USE shareTop;
 
 CREATE TABLE Equipment (
-	code INT AUTO_INCREMENT NOT NULL, 
+	id INT AUTO_INCREMENT NOT NULL, 
 	model VARCHAR(50),
-	speed SMALLINT,
-	ram SMALLINT,
-	screen TINYINT,
+	speed INT,
+	ram VARCHAR(10),
+	screen_size INT,
 	price DECIMAL,
 	description VARCHAR(255),
-	PRIMARY KEY (code)
-	-- FOREIGN KEY (emailaddress)
+	PRIMARY KEY (id)
+	FOREIGN KEY (emailaddress)
 );
 
-CREATE TABLE UserAccount (
+CREATE TABLE Passport (
 	userID INT (11) NOT NULL AUTO_INCREMENT,
 	emailaddress VARCHAR (255),
 	password VARCHAR (50),
@@ -23,7 +22,7 @@ CREATE TABLE UserAccount (
 );
 
 CREATE TABLE Customer (
-	emailaddress2 VARCHAR (255),
+	emailaddress VARCHAR (255),
 	first_name VARCHAR (100),
 	last_name VARCHAR (100),	
 	address_id INT,
@@ -33,26 +32,30 @@ CREATE TABLE Customer (
 	state VARCHAR (2),
 	postal_code VARCHAR (5),
 	phone VARCHAR (11),
-	-- active 
+	active 
 	create_date DATE,
 	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (emailaddress2)
+	PRIMARY KEY (emailaddress)
 );
 
--- CREATE TABLE Rental (
--- 	rental_id INT,
--- 	rental_date DATE,
--- 	inventory_id INT AUTO_INCREMENT NOT NULL,
--- 	username VARCHAR (255),
--- 	return_date DATE,
--- 	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
--- );
--- 
--- CREATE TABLE Payment (
--- 	payment_id INT,
--- 	customer_id INT,
--- 	rental_id INT,
--- 	amount DECIMAL,
--- 	payment_date DATE,
--- 	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
--- );
+CREATE TABLE Rental (
+	rental_id INT AUTO_INCREMENT NOT NULL,
+	rental_date DATE,
+	inventory_id INT,
+	username VARCHAR (255),
+	return_date DATE,
+	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (rental_id)
+	-- FOREIGN KEY (emailaddress)
+);
+
+CREATE TABLE Payment (
+	payment_id INT,
+	customer_id INT,
+	rental_id INT,
+	amount DECIMAL,
+	payment_date DATE,
+	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (payment_id)
+	-- FOREIGN KEY (emailaddress)
+);
