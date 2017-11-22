@@ -34,6 +34,8 @@ app.set("view engine", "handlebars");
 //==========//
 app.use('/users', require('./routes/htmlRoutes/usersRoutes'));
 
+app.use("/", require("./routes/htmlRoutes/appRoutes.js"));
+
 
 
 //================//
