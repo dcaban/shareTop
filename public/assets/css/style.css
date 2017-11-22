@@ -1,3 +1,42 @@
 .container{
     margin-top: 40px!important;
 }
+
+.card-panel{
+    padding: 25px !important;
+    padding-top: 30px !important;
+    
+}
+
+#index-panel{
+
+}
+
+#where{
+    height: 3.5rem !important;
+}
+
+#searchbutton{
+    margin-top:10px;
+    padding: 0px;
+    padding-top: 3px;
+ 
+    width: 40px;
+    height: 40px;
+    border-radius: 100% !important;
+}
+
+@media only screen and (min-width: 600px) {
+    #index-panel{
+        padding: 30px !important;
+        padding-top: 5px !important;
+        padding-bottom: 0px !important;
+        border-radius:50px;
+    }
+    body {
+        background-color: lightblue;
+    }
+    #where, #time1, #date1, #date2, #time2, #index-row {
+        margin-bottom: 2px !important;
+    }
+}
