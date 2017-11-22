@@ -4,14 +4,14 @@ DROP TABLE IF EXISTS shareTop;
 USE shareTop;
 
 CREATE TABLE Equipment (
-	code INT AUTO_INCREMENT NOT NULL, 
+	id INT AUTO_INCREMENT NOT NULL, 
 	model VARCHAR(50),
-	speed SMALLINT,
-	ram SMALLINT,
-	screen TINYINT,
+	speed INT,
+	ram VARCHAR(10),
+	screen_size INT,
 	price DECIMAL,
 	description VARCHAR(255),
-	PRIMARY KEY (code)
+	PRIMARY KEY (id)
 	-- FOREIGN KEY (emailaddress)
 );
 

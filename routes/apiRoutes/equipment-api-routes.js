@@ -9,13 +9,13 @@ module.exports = function(app) {
   });
 
   app.get("/api/equipment/:code", function(req, res) {
-     // Find one Equipment with the code in req.params.id and return them to the user with res.json
+     // Find one Equipment with the code in req.params.code and return them to the user with res.json
     db.Equipment.findOne({
       where: {
-        id: req.params.id
+        code: req.params.code
       }
     }).then(function(dbEquipment) {
-      res.json(dbAuthor);
+      res.json(dbEquipment);
     });
   });
 
@@ -31,7 +31,7 @@ module.exports = function(app) {
     // Delete the Equipment with the code available to us in req.params.code
     db.Equipment.destroy({
       where: {
-        id: req.params.id
+        code: req.params.code
       }
     }).then(function(dbEquipment) {
       res.json(dbEquipment);
