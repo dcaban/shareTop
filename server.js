@@ -28,30 +28,7 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-//==========//
-//==ROUTES==//
-//==========//
-// Data
-var lunches = [
-    {
-      lunch: "Beet & Goat Cheese Salad with minestrone soup."
-    }, {
-      lunch: "Pizza, two double veggie burgers, fries with a big glup"
-    }
-  ];
-  
-  app.get("/", function(req, res) {
-    res.render("index", {
-      foods: lunches,
-      eater: "david"
-    });
-  });
-  app.get("/form", function(req, res) {
-    res.render("createUser", {
-      foods: lunches,
-      eater: "david"
-    });
-  });
+
 
 
 //================//
