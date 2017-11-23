@@ -9,7 +9,7 @@
 }
 
 #index-panel{
-
+    opacity: 0.96;
 }
 
 #where{
@@ -25,18 +25,106 @@
     height: 40px;
     border-radius: 100% !important;
 }
+.nav-wrapper{
+    z-index: 10000 !important;
+}
+body {
+    background-color: lightblue;
+}
 
-@media only screen and (min-width: 600px) {
+.carousel-item
+{
+  background-size : cover;
+  background-position: center;
+}
+
+.c1
+{
+  background-image : url(' ../img/gardentop.jpeg');
+}
+
+.c2
+{
+  background-image : url('../img/headphonebook.jpeg');
+}
+
+.c3
+{
+  background-image : url(' ../img/meetingtop.jpeg');
+}
+
+ .c4
+{
+  background-image : url(' ../img/handbook.jpeg');
+}
+
+.c5
+{
+  background-image : url(' ../img/couchtop.jpeg');
+}
+
+
+@media only screen and (min-width: 992px) {
+    #maincontent{
+    position: absolute !important;
+    top: 600px !important;
+    background-color: white
+}
     #index-panel{
         padding: 30px !important;
         padding-top: 5px !important;
         padding-bottom: 0px !important;
         border-radius:50px;
     }
-    body {
-        background-color: lightblue;
-    }
+    
     #where, #time1, #date1, #date2, #time2, #index-row {
         margin-bottom: 2px !important;
     }
+   
+    .carousel{
+        z-index: 1 !important;
+        position: absolute;
+        top:0px; 
+        height: 600px;
+    } 
+    .carousel-fixed-item{
+    position: absolute!important;
+    top: 400px;
+    max-height: 100px;
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+    #index-panel{
+        padding: 30px !important;
+        padding-top: 5px !important;
+        padding-bottom: 0px !important;
+        border-radius:35px;
+    }
+    
+    #where, #time1, #date1, #date2, #time2, #index-row {
+        margin-bottom: 2px !important;
+    }
+   
+    .carousel{
+        z-index: 1 !important;
+        position: absolute;
+        top:0px; 
+        height: 700px;
+    }
+    .carousel-fixed-item{
+    position: absolute;
+    top: 350px;
+    max-height: 100px;
+    }
+
+
+.carousel {
+    min-height: 400px;
+  }
+
+  #index-panel{
+    opacity: 0.93;
+}
 }
