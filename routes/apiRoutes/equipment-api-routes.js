@@ -8,11 +8,11 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/equipment/:code", function(req, res) {
-     // Find one Equipment with the code in req.params.code and return them to the user with res.json
+  app.get("/api/equipment/:id", function(req, res) {
+     // Find one Equipment with the id in req.params.id and return them to the user with res.json
     db.Equipment.findOne({
       where: {
-        code: req.params.code
+        id: req.params.id
       }
     }).then(function(dbEquipment) {
       res.json(dbEquipment);
@@ -27,11 +27,11 @@ module.exports = function(app) {
     });
   });
 
-  app.delete("/api/equipment/:code", function(req, res) {
-    // Delete the Equipment with the code available to us in req.params.code
+  app.delete("/api/equipment/:id", function(req, res) {
+    // Delete the Equipment with the id available to us in req.params.id
     db.Equipment.destroy({
       where: {
-        code: req.params.code
+        id: req.params.id
       }
     }).then(function(dbEquipment) {
       res.json(dbEquipment);
