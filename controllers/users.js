@@ -1,6 +1,8 @@
 //=====//
 //====//
 //=====//
+const User = require('../models/customer');
+
 module.exports = {
     signUp: async (req, res, next) => {
         console.log('Called: userController.signUp()');

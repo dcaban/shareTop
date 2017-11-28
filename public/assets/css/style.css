@@ -1,3 +1,184 @@
-.container{
-    margin-top: 40px!important;
+
+
+.datepicker-day-button {
+    color: black;
 }
+
+.card-panel{
+
+    padding: 10px !important;
+    padding-top: 30px !important;
+    
+}
+
+nav i.material-icons {
+    display: block;
+    font-size: 26px;
+    height: 56px;
+    line-height: 56px;
+}
+
+#index-panel{
+    opacity: 0.96;
+}
+
+#where{
+    height: 3.5rem !important;
+}
+
+#searchbutton{
+
+    margin-top:10px;
+    padding: 0px;
+ 
+    width: 50px;
+    height: 50px;
+    border-radius: 100% !important;
+
+}
+.nav-wrapper{
+    z-index: 10000 !important;
+}
+.nav-wrapperz{
+    z-index: 10003 !important;
+}
+body {
+    background-color: lightblue;
+}
+
+.model-overlay{
+    max-height: 0px!important;
+}
+.carousel-item
+{
+  background-size : cover;
+  background-position: center;
+}
+
+.c1
+{
+  background-image : url(' ../img/gardentop.jpeg');
+}
+
+.c2
+{
+  background-image : url('../img/headphonebook.jpeg');
+}
+
+.c3
+{
+  background-image : url(' ../img/meetingtop.jpeg');
+}
+
+ .c4
+{
+  background-image : url(' ../img/handbook.jpeg');
+}
+
+.c5
+{
+  background-image : url(' ../img/couchtop.jpeg');
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+    border: none;
+    border-bottom: 1px solid #9e9e9e!important;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0 0 8px 0;
+    padding: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.timepicker-digital-display{
+    line-height: 30px;
+}
+
+
+@media only screen and (min-width: 992px) {
+    #maincontent{
+    position: absolute !important;
+    top: 750px !important;
+    background-color: white;
+    width:100%;
+}
+
+.search{
+    line-height: 10px;
+}
+
+.searchP{
+    line-height: 10px;
+    position: absolute;
+    top: 450px;
+}
+    #index-panel{
+        padding: 30px !important;
+        padding-top: 8px !important;
+        padding-bottom: 0px !important;
+        border-radius:50px;
+    }
+    
+    #where, #time1, #date1, #date2, #time2 {
+        margin-bottom: 2px !important;
+        font-size: 11px;
+    }
+    .input-field .prefix.active {
+        color: #000 !important;
+      }
+    #where{
+       position: relative;
+       top: 4px;
+    }
+    #wherelabel{
+        position: realative;
+        top: 19px;
+    }
+
+    .carousel{
+        position: absolute!important;
+        top:0px; 
+        height: 850px;
+    } 
+
+}
+
+
+@media only screen and (max-width: 992px) {
+    #index-panel{
+        padding: 30px !important;
+        padding-top: 15x !important;
+        padding-bottom: 0px !important;
+        border-radius:35px;
+        line-height: 40px;
+    }
+    
+    .search{
+        position: absolute;
+        top: 425px;
+    }
+    .carousel{
+        position: absolute;
+        top:0px; 
+        height: 850px;
+    }
+
+
+  #index-panel{
+    opacity: 0.93;
+}
+    #maincontent{
+        position: absolute !important;
+        top: 850px !important;
+        background-color: white;
+        width: 100%;
+    }
+}
+
