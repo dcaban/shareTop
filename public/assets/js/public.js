@@ -3,7 +3,7 @@ $( document ).ready(function(){
         $('select').select();
 
 
-        var isLoggedIn = localStorage.setItem("isLoggedOn", false);
+        var isLoggedIn = sessionStorage.setItem("isLoggedOn", false);
 
         $('.timepicker').timepicker({
           default: 'now', // Set default time: 'now', '1:30AM', '16:30'
@@ -34,6 +34,41 @@ $( document ).ready(function(){
         setInterval(function(){
         $('.carousel').carousel('next');
         }, 6000);
+
+<<<<<<< HEAD
+        //On click on button function that calls post function with signUp form data
+          $(".button").on('click', function (event) {
+            event.preventDefault();
+          });
+        
+        //
               
 });
        
+=======
+       //onclick for form button
+      
+       $("#searchbutton").click(function(event) {
+         event.preventDefault();
+        console.log( "button was clicked" );
+     
+          var newSearch = {
+            location: $("#where").val().trim(),
+            startTime: $("#time1").val().trim(),
+            endTime: $("#time2").val().trim(),
+            startDate: $("#date1").val().trim(),
+            endDate: $("#date2").val().trim()
+          };
+          
+          console.log(newSearch);
+
+          $.post("/api/search", newSearch, function() {
+            // window.location.href = "/results";
+          });
+        });
+       //make values object
+
+       //ajax post
+
+      });
+>>>>>>> 87662e59541d8971adb7d09a99137b87e16048b1
