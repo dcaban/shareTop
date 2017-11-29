@@ -2,18 +2,23 @@ CREATE DATABASE shareTop;
 DROP TABLE IF EXISTS shareTop;
 USE shareTop;
 
+DROP TABLE IF EXISTS Equipment;
 CREATE TABLE Equipment (
 	id INT AUTO_INCREMENT NOT NULL, 
-	model VARCHAR(50),
-	speed INT,
-	ram VARCHAR(10),
-	screen_size INT,
-	price DECIMAL,
-	description VARCHAR(255),
+	model VARCHAR (50) DEFAULT NULL,
+	speed INT (11) DEFAULT NULL,
+	ram VARCHAR (10) DEFAULT NULL,
+	screen_size INT DEFAULT NULL,
+	price DECIMAL (10,0) DEFAULT NULL,
+	description VARCHAR (255) DEFAULT NULL,
+	routeName VARCHAR (45) DEFAULT NULL,
+	createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id)
-	FOREIGN KEY (emailaddress)
+	-- FOREIGN KEY (emailaddress)
 );
 
+DROP TABLE IF EXISTS Passport;
 CREATE TABLE Passport (
 	userID INT (11) NOT NULL AUTO_INCREMENT,
 	emailaddress VARCHAR (255),
@@ -21,6 +26,7 @@ CREATE TABLE Passport (
 	PRIMARY KEY (userID)
 );
 
+DROP TABLE IF EXISTS Customer;
 CREATE TABLE Customer (
 	emailaddress VARCHAR (255),
 	first_name VARCHAR (100),
@@ -32,12 +38,11 @@ CREATE TABLE Customer (
 	state VARCHAR (2),
 	postal_code VARCHAR (5),
 	phone VARCHAR (11),
-	active 
-	create_date DATE,
-	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (emailaddress)
+	last_update timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (emailaddress)
 );
 
+DROP TABLE IF EXISTS Rental;
 CREATE TABLE Rental (
 	rental_id INT AUTO_INCREMENT NOT NULL,
 	rental_date DATE,
@@ -49,6 +54,7 @@ CREATE TABLE Rental (
 	-- FOREIGN KEY (emailaddress)
 );
 
+DROP TABLE IF EXISTS Payment;
 CREATE TABLE Payment (
 	payment_id INT,
 	customer_id INT,
