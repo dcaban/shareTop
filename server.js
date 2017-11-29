@@ -40,6 +40,7 @@ app.use('/users', require('./routes/htmlRoutes/usersRoutes'));
 
 app.use("/", require("./routes/htmlRoutes/appRoutes.js"));
 
+require("./routes/apiRoutes/api-routes.js")(app);
 
 
 //================//

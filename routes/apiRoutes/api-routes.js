@@ -12,13 +12,17 @@ var db = require("../../models");
 // =============================================================
 module.exports = function(app) {
 
+  // Display all equipment in database[shareTop]
+  app.get("/api/equipment");
+
   // Add equipment
-  app.post("/api/new", function(req, res) {
+  app.post("/api/equipment", function(req, res) {
     
         console.log("Equipment Data:");
         console.log(req.body);
-    
-        Equipment.create({
+
+        db.Equipment.create({
+
           model: req.body.model,
           speed: req.body.speed,
           ram: req.body.ram,
@@ -32,12 +36,11 @@ module.exports = function(app) {
       });
 
   // Add user account
-  app.post("/api/new", function(req, res) {
-    
+  app.post("/api/useraccount", function(req, res) {
         console.log("useraccount Data:");
         console.log(req.body);
-    
-        userAccount.create({
+        
+        db.userAccount.create({
           emailaddress: req.body.emailaddress,
           password: req.body.password        
         }).then(function(results) {
@@ -45,14 +48,13 @@ module.exports = function(app) {
           res.end();
         });
       });
-
   // Add customer
-  app.post("/api/new", function(req, res) {
+  app.post("/api/customer", function(req, res) {
     
         console.log("Customer Data:");
         console.log(req.body);
     
-        Customer.create({
+       db.Customer.create({
           first_name: req.body.first_name,
           last_name: req.body.last_name,
           address: req.body.address,
@@ -69,6 +71,9 @@ module.exports = function(app) {
         });
       });
 
+
+
+  
   // DELETE route for deleting equipment
   app.delete("/api/equipment/:id", function(req, res) {
     db.Equipment.destroy({
@@ -140,7 +145,9 @@ module.exports = function(app) {
       
             // Then display the JSON for ONLY that equipment.
             // (Note how we're using the ORM here to run our searches)
-            Equipment.findOne({
+
+            db.Equipment.findOne({
+
               where: {
                 routeName: req.params.equipment
               }
@@ -153,21 +160,15 @@ module.exports = function(app) {
           else {
             // Otherwise display the data for all of the equipment.
             // (Note how we're using Sequelize here to run our searches)
-            Equipment.findAll({})
+
+      
+            db.Equipment.findAll({})
               .then(function(result) {
                 return res.json(result);
               });
           }
       
         });
-    //*** Unsure if this is needed?????***
-    // GET route for getting all of the posts
-    app.get("/api/posts/", function(req, res) {
-      db.Post.findAll({})
-      .then(function(dbPost) {
-        res.json(dbPost);
-      });
-    });
   
     // Get route for returning posts of a specific model
     app.get("/api/posts/model/:model", function(req, res) {
@@ -181,7 +182,9 @@ module.exports = function(app) {
       });
     });
   
+
     // Get rotue for retrieving a single post
+
     app.get("/api/posts/:id", function(req, res) {
       db.Post.findOne({
         where: {
@@ -229,6 +232,9 @@ module.exports = function(app) {
       .then(function(dbPost) {
         res.json(dbPost);
       });
+
+    });  
+
     }); 
 
     //post for a new search
