@@ -224,6 +224,21 @@ module.exports = function(app) {
       .then(function(dbPost) {
         res.json(dbPost);
       });
-    });  
+    }); 
+
+    //post for a new search
+    app.post("/api/search", function(req, res) {
+      console.log("Server side body:",req.body);
+      res.send("Post to search")
+    //ToDO: Make new search model
+      // db.Search.findAll({
+      //   title: req.body.title,
+      //   body: req.body.body,
+      //   category: req.body.category
+      // })
+      // .then(function(dbPost) {
+      //   res.json(dbPost);
+      // });
+    });
 
 };
