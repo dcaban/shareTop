@@ -235,7 +235,6 @@ module.exports = function(app) {
 
     });  
 
-    }); 
 
     //post for a new search
     app.post("/api/search", function(req, res) {
