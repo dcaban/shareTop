@@ -3,7 +3,7 @@ $( document ).ready(function(){
         $('select').select();
 
 
-        var isLoggedIn = localStorage.setItem("isLoggedOn", false);
+        var isLoggedIn = sessionStorage.setItem("isLoggedOn", false);
 
         $('.timepicker').timepicker({
           default: 'now', // Set default time: 'now', '1:30AM', '16:30'
@@ -35,6 +35,17 @@ $( document ).ready(function(){
         $('.carousel').carousel('next');
         }, 6000);
 
+<<<<<<< HEAD
+        //On click on button function that calls post function with signUp form data
+          $(".button").on('click', function (event) {
+            event.preventDefault();
+          });
+        
+        //
+              
+});
+       
+=======
        //onclick for form button
       
        $("#searchbutton").click(function(event) {
@@ -60,3 +71,4 @@ $( document ).ready(function(){
        //ajax post
 
       });
+>>>>>>> 87662e59541d8971adb7d09a99137b87e16048b1

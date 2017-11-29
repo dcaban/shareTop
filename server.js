@@ -32,6 +32,8 @@ app.set("view engine", "handlebars");
 //==========//
 //==ROUTES==//
 //==========//
+app.use('/login', require('./routes/htmlRoutes/usersRoutes'));//routes for user login
+app.use('/createUser', require('/routes/htmlRoutes/userRoutes'));//routes for user creation
 require("./routes/apiRoutes/api-routes")(app);
 
 app.use('/users', require('./routes/htmlRoutes/usersRoutes'));
