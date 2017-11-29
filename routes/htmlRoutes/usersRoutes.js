@@ -14,6 +14,9 @@ router.route('/signin')
 
 router.route('/secret')
     .get(userController.secret);
+   
+ router.route('/search')
+    .get(userController.search);
 
 
 
