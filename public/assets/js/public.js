@@ -34,6 +34,29 @@ $( document ).ready(function(){
         setInterval(function(){
         $('.carousel').carousel('next');
         }, 6000);
-              
-});
-       
+
+       //onclick for form button
+      
+       $("#searchbutton").click(function(event) {
+         event.preventDefault();
+        console.log( "button was clicked" );
+     
+          var newSearch = {
+            location: $("#where").val().trim(),
+            startTime: $("#time1").val().trim(),
+            endTime: $("#time2").val().trim(),
+            startDate: $("#date1").val().trim(),
+            endDate: $("#date2").val().trim()
+          };
+          
+          console.log(newSearch);
+
+          $.post("/api/search", newSearch, function() {
+            // window.location.href = "/results";
+          });
+        });
+       //make values object
+
+       //ajax post
+
+      });

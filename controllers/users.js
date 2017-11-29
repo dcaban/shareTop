@@ -15,6 +15,9 @@ module.exports = {
     secret: async (req, res, next) => {
         console.log('Called: userController.secret()');
     },
+    search: async (req, res, next) => {
+        console.log('Called: userController.search()');
+    }
 }
 
 
