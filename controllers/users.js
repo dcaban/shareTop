@@ -25,8 +25,17 @@ module.exports = {
         console.log('req.body');
         // console.log(req.body);
         console.log('Called: userController.signUp()');
+        console.log('Validation schema results');
+     
         const result = Joi.validate(req.body, userSchema);
         console.log(result);
+        if (result.error) {
+            //code for display error message
+           
+            res.redirect('/signup'); //reload create user form page.
+            return; 
+        }
+      
         
     },
 
