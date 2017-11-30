@@ -34,9 +34,7 @@ module.exports = {
            
             res.redirect('/signup'); //reload create user form page.
             return; 
-        }
-      
-        
+        }   
     },
 
     signIn: async (req, res, next) => {
