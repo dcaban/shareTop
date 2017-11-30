@@ -13,16 +13,21 @@ var db = require("../../models");
 module.exports = function(app) {
 
   // Display all equipment in database[shareTop]
-  app.get("/api/equipment");
+  app.get("/api/:equipment", function(req, res) {
+    db.Equipment.create({
+      model: req.body.model
+    }).then(function(results) {
+      res.end();
+    });
+  });
 
   // Add equipment
   app.post("/api/equipment", function(req, res) {
     
         console.log("Equipment Data:");
         console.log(req.body);
-
+    
         db.Equipment.create({
-
           model: req.body.model,
           speed: req.body.speed,
           ram: req.body.ram,
@@ -37,9 +42,10 @@ module.exports = function(app) {
 
   // Add user account
   app.post("/api/useraccount", function(req, res) {
+    
         console.log("useraccount Data:");
         console.log(req.body);
-        
+    
         db.userAccount.create({
           emailaddress: req.body.emailaddress,
           password: req.body.password        
@@ -48,6 +54,7 @@ module.exports = function(app) {
           res.end();
         });
       });
+
   // Add customer
   app.post("/api/customer", function(req, res) {
     
@@ -71,10 +78,8 @@ module.exports = function(app) {
         });
       });
 
-
-
-  
   // DELETE route for deleting equipment
+  //This api function works - 11/30/2017
   app.delete("/api/equipment/:id", function(req, res) {
     db.Equipment.destroy({
       where: {
@@ -86,15 +91,16 @@ module.exports = function(app) {
     });
   });
 
-  // DELETE route for deleting user account
-  app.delete("/api/useraccount/:id", function(req, res) {
-    db.UserAccount.destroy({
+  // DELETE route for deleting user account in Passport
+  //This api function works - 11/30/2017
+  app.delete("/api/passport/:id", function(req, res) {
+    db.Passport.destroy({
       where: {
         id: req.params.id
       }
     })
-    .then(function(dbUserAccount) {
-      res.json(dbUserAccount);
+    .then(function(dbPassport) {
+      res.json(dbPassport);
     });
   });
 
@@ -111,22 +117,22 @@ module.exports = function(app) {
     });
   });
 
-  // PUT route for updating password in useraccount
-  app.put("/api/useraccount", function(req, res) {
-    db.UserAccount.update(req.body,
+  // PUT route for updating password in useraccount in Passport
+  app.put("/api/passport", function(req, res) {
+    db.Passport.update(req.body,
       {
         where: {
           id: req.body.id
         }
       })
-    .then(function(dbUserAccount) {
-      res.json(dbUserAccount);
+    .then(function(dbPassport) {
+      res.json(dbPassport);
     });
   });
 
-  // PUT route for updating user account
-  app.put("/api/useraccount", function(req, res) {
-    db.UserAccount.update(req.body,
+  // PUT route for updating user account in Passport
+  app.put("/api/passport", function(req, res) {
+    db.Passport.update(req.body,
       {
         where: {
           id: req.body.id
@@ -145,9 +151,7 @@ module.exports = function(app) {
       
             // Then display the JSON for ONLY that equipment.
             // (Note how we're using the ORM here to run our searches)
-
             db.Equipment.findOne({
-
               where: {
                 routeName: req.params.equipment
               }
@@ -160,8 +164,6 @@ module.exports = function(app) {
           else {
             // Otherwise display the data for all of the equipment.
             // (Note how we're using Sequelize here to run our searches)
-
-      
             db.Equipment.findAll({})
               .then(function(result) {
                 return res.json(result);
@@ -169,7 +171,7 @@ module.exports = function(app) {
           }
       
         });
-  
+      
     // Get route for returning posts of a specific model
     app.get("/api/posts/model/:model", function(req, res) {
       db.Post.findAll({
@@ -182,9 +184,7 @@ module.exports = function(app) {
       });
     });
   
-
-    // Get rotue for retrieving a single post
-
+    // Get route for retrieving a single post
     app.get("/api/posts/:id", function(req, res) {
       db.Post.findOne({
         where: {
@@ -232,9 +232,7 @@ module.exports = function(app) {
       .then(function(dbPost) {
         res.json(dbPost);
       });
-
-    });  
-
+    }); 
 
     //post for a new search
     app.post("/api/search", function(req, res) {
