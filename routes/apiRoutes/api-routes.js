@@ -12,7 +12,8 @@ var db = require("../../models");
 // =============================================================
 module.exports = function(app) {
 
-  // Display all equipment in database[shareTop]
+  // Display ALL equipment in database[shareTop]
+  // ***😊This api function works - 11/30/2017
   app.get("/api/:equipment", function(req, res) {
     db.Equipment.create({
       model: req.body.model
@@ -22,6 +23,8 @@ module.exports = function(app) {
   });
 
   // Add equipment
+  // ***Receives "Cannot POST /api/equipmenthp" error in Postman - 11/30/2017
+  // ***Receives "/api/equipmenthp 404 0.355 ms - 155" in terminal - 11/30/2017
   app.post("/api/equipment", function(req, res) {
     
         console.log("Equipment Data:");
@@ -40,13 +43,13 @@ module.exports = function(app) {
         });
       });
 
-  // Add user account
-  app.post("/api/useraccount", function(req, res) {
+  // Add user account in passport
+  app.post("/api/passport", function(req, res) {
     
-        console.log("useraccount Data:");
+        console.log("Passport Data:");
         console.log(req.body);
     
-        db.userAccount.create({
+        db.Passport.create({
           emailaddress: req.body.emailaddress,
           password: req.body.password        
         }).then(function(results) {
@@ -79,7 +82,7 @@ module.exports = function(app) {
       });
 
   // DELETE route for deleting equipment
-  //This api function works - 11/30/2017
+  // ***😊This api function works - 11/30/2017
   app.delete("/api/equipment/:id", function(req, res) {
     db.Equipment.destroy({
       where: {
@@ -92,7 +95,7 @@ module.exports = function(app) {
   });
 
   // DELETE route for deleting user account in Passport
-  //This api function works - 11/30/2017
+  // 😊This api function works - 11/30/2017
   app.delete("/api/passport/:id", function(req, res) {
     db.Passport.destroy({
       where: {
@@ -105,6 +108,8 @@ module.exports = function(app) {
   });
 
   // PUT route for updating equipment
+  // ***Receives "Cannot PUT /api/equipment" error in Postman - 11/30/2017
+  // ***Receives "PUT /api/equipment 404 2.172 ms - 152" in terminal - 11/30/2017
   app.put("/api/equpiment", function(req, res) {
     db.Equipment.update(req.body,
       {
@@ -144,6 +149,7 @@ module.exports = function(app) {
   });
 
     // Search for specific equipment (or all equipment) then provides JSON
+    // ***😊This displays all equipment. 🙁Working on figuring out how to get specific equipment to display. - 11/30/2017
     app.get("/api/:equipment?", function(req, res) {
       
           // If the user provides a specific piece of equipment in the URL...
