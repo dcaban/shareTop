@@ -1,44 +1,61 @@
 <div class="container">
 
   <div class="row">
-
     <div class="col l6">
       <div class="card large">
         <span class="center white-text card-title teal col s12">
           <h5>My Equipement</h5>
         </span>
-
+        <a class="col s6 waves-effect waves-light btn">
+          <i class="material-icons right">laptop_mac </i>add</a>
+        <a class="col s6 amber waves-effect waves-light btn">
+          <i class="material-icons right">edit</i>edit</a>
         <div class="card-content">
+
 
           {{>equipment}}
 
           <div class="col s12">
-            
-              <div class="row center">
-                
-                <a class="waves-effect waves-light btn">
-                  <i class="material-icons right">laptop_mac </i>add</a>
-                <a class="amber waves-effect waves-light btn">
-                  <i class="material-icons right">edit</i>edit</a>
-             
-            </div>
           </div>
         </div>
       </div>
     </div>
-  
+
+    <div class="col l6">
+      <div class="card large">
+        <span class="center white-text card-title teal col s12">
+          <h5>Equpiment You Rented From Someone</h5>
+        </span>
+
+        <div class="card-content">
+          {{>rented}}
+        </div>
+      </div>
+    </div>
 
 
+    <div class="col l6">
+      <div class="card large">
+        <span class="center white-text card-title teal col s12">
+          <h5>Requests For Your Equpiment</h5>
+        </span>
 
-  <div class="col l6">
-    <div class="card large">
-      <span class="center white-text card-title teal col s12">
-        <h5>Requests For Your Equpiment</h5>
-      </span>
+        <div class="card-content">
+          {{>requests}}
+        </div>
+      </div>
+    </div>
 
-      <div class="card-content">
-       {{>requests}}
+
+    <div class="col l6">
+      <div class="card large">
+        <span class="center white-text card-title teal col s12">
+          <h5>Equipment You Rented To Someone</h5>
+        </span>
+
+        <div class="card-content">
+          {{>confirmedrequests}}
+        </div>
       </div>
     </div>
   </div>
-</div>

@@ -101,6 +101,14 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     line-height: 30px;
 }
 
+.adminButtons{
+    padding: 0px;
+    margin: 0px;
+}
+
+.cardButtons{
+    padding-bottom: 0px !important;
+}
 
 @media only screen and (min-width: 992px) {
     #maincontent{

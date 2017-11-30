@@ -20,6 +20,11 @@ router.get("/signup", function(req, res) {
   router.get("/admin", function(req, res) {
     res.render("admin");
   });
+  router.get("/addequipment", function(req, res) {
+    res.render("addequipment");
+  });
+  
+
 
 // Export routes for server.js to use.
 module.exports = router;

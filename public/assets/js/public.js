@@ -1,4 +1,5 @@
 $( document ).ready(function(){
+  //javascrpt for materialize ui
         $('.sidenav').sidenav();
         $('select').select();
 
@@ -34,6 +35,10 @@ $( document ).ready(function(){
         setInterval(function(){
         $('.carousel').carousel('next');
         }, 6000);
+        
+        $('.fixed-action-btn').floatingActionButton({
+          toolbarEnabled: true
+        });
 
 
         //On click on button function that calls post function with signUp form data
@@ -68,4 +73,5 @@ $( document ).ready(function(){
        //make values object
 
        //ajax post
+      
 
