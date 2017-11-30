@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 
     <head>
         <meta charset="utf-8">
@@ -6,17 +6,37 @@
         <title>shareTop</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--Add jquery cdn-->
-        <!-- Add materialize cdn -->
+        
+      <!--Add jquery cdn-->
+       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+          <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.1/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.1/js/materialize.min.js"></script>
+      
+        {{!-- adding material-icons --}}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+          
+        
         <!-- Add google fonts -->
         <!-- Add style.css -->
-        
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+        {{!-- linking public js --}}
+     <script type="text/javascript" src="assets/js/public.js"></script>
     </head>
     <body>
+      {{#if isLoggedIn}}
+    {{> navbarAuth}}
+{{else}}
+   {{> navbar}}
+{{/if}}
+           
         {{{body}}}
+        
 
         <!-- link script files -->
-        <script>
-        </script>
+           
     </body>
 </html>

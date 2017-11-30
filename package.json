@@ -20,10 +20,18 @@
     "body-parser": "^1.18.2",
     "chai": "^4.1.2",
     "express": "^4.16.2",
+<<<<<<< HEAD
     "joi": "^13.0.2",
+=======
+    "express-handlebars": "^3.0.0",
+    "express-promise-router": "^2.0.0",
+    "jsonwebtoken": "^8.1.0",
+    "materialize-css": "^0.100.2",
+>>>>>>> b525533c3e87f914eb73b3e1af8e07bc9e818429
     "mocha": "^4.0.1",
     "morgan": "^1.9.0",
     "mysql": "^2.15.0",
+    "mysql2": "^1.5.1",
     "nodemon": "^1.12.1",
     "sequelize": "^4.22.8"
   }

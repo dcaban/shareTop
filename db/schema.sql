@@ -1,30 +1,36 @@
--- ### Schema
 CREATE DATABASE shareTop;
+DROP TABLE IF EXISTS shareTop;
 USE shareTop;
 
+DROP TABLE IF EXISTS Equipment;
 CREATE TABLE Equipment (
-	code INT NOT NULL AUTO_INCREMENT, 
-	model VARCHAR(50),
-	speed SMALLINT,
-	ram SMALLINT,
-	screen TINYINT,
-	price MONEY,
-	description VARCHAR(255),
-	PRIMARY KEY (code)
+	id INT AUTO_INCREMENT NOT NULL, 
+	model VARCHAR (50) DEFAULT NULL,
+	speed INT (11) DEFAULT NULL,
+	ram VARCHAR (10) DEFAULT NULL,
+	screen_size INT DEFAULT NULL,
+	price DECIMAL (10,0) DEFAULT NULL,
+	description VARCHAR (255) DEFAULT NULL,
+	routeName VARCHAR (45) DEFAULT NULL,
+	createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (id)
+	-- FOREIGN KEY (emailaddress)
 );
 
-CREATE TABLE UserAccount (
-	userID INT (50) NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS Passport;
+CREATE TABLE Passport (
+	userID INT (11) NOT NULL AUTO_INCREMENT,
 	emailaddress VARCHAR (255),
 	password VARCHAR (50),
-	PRIMARY KEY (emailaddress)
+	PRIMARY KEY (userID)
 );
 
+DROP TABLE IF EXISTS Customer;
 CREATE TABLE Customer (
 	emailaddress VARCHAR (255),
 	first_name VARCHAR (100),
-	last_name VARCHAR (100),
-	emailaddress VARCHAR (255),
+	last_name VARCHAR (100),	
 	address_id INT,
 	address VARCHAR (255),
 	address2 VARCHAR (255),
@@ -32,26 +38,30 @@ CREATE TABLE Customer (
 	state VARCHAR (2),
 	postal_code VARCHAR (5),
 	phone VARCHAR (11),
-	active 
-	create_date CURRENT_TIMESTAMP,
-	last_update CURRENT_TIMESTAMP,
-	PRIMARY KEY ()
+	last_update timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (emailaddress)
 );
 
+DROP TABLE IF EXISTS Rental;
 CREATE TABLE Rental (
-	rental_id INT,
+	rental_id INT AUTO_INCREMENT NOT NULL,
 	rental_date DATE,
-	inventory_id/code INT NOT NULL AUTO_INCREMENT,
+	inventory_id INT,
 	username VARCHAR (255),
 	return_date DATE,
-	last_update CURRENT_TIMESTAMP
+	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (rental_id)
+	-- FOREIGN KEY (emailaddress)
 );
 
+DROP TABLE IF EXISTS Payment;
 CREATE TABLE Payment (
 	payment_id INT,
 	customer_id INT,
 	rental_id INT,
-	amount MONEY,
+	amount DECIMAL,
 	payment_date DATE,
-	last_update CURRENT_TIMESTAMP
+	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (payment_id)
+	-- FOREIGN KEY (emailaddress)
 );
