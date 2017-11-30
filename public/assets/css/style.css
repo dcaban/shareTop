@@ -110,6 +110,10 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     padding-bottom: 0px !important;
 }
 
+.sierra{
+    max-height: 300px;
+}
+
 @media only screen and (min-width: 992px) {
     #maincontent{
     position: absolute !important;
@@ -157,6 +161,11 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     } 
 
 }
+
+    .npr{
+        margin-top: 70px;
+        max-width: 550px;
+    }
 
 
 @media only screen and (max-width: 992px) {

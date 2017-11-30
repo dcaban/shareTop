@@ -65,3 +65,12 @@ CREATE TABLE Payment (
 	PRIMARY KEY (payment_id)
 	-- FOREIGN KEY (emailaddress)
 );
+
+DROP TABLE IF EXISTS Status;
+CREATE TABLE Status (
+	status_id INT AUTO_INCREMENT NOT NULL,
+	open BOOLEAN DEFAULT NULL,
+    closed BOOLEAN DEFAULT NULL,
+    pending BOOLEAN DEFAULT NULL,
+    PRIMARY KEY (status_id)
+);

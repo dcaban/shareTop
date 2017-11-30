@@ -23,6 +23,9 @@ router.get("/signup", function(req, res) {
   router.get("/addequipment", function(req, res) {
     res.render("addequipment");
   });
+  router.get("/security", function(req, res) {
+    res.render("security");
+  });
   
 
 
