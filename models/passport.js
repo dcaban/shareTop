@@ -1,7 +1,7 @@
 //authentication api calls and logic
 //user account (profile) api calls and logic
 module.exports = function(sequelize, DataTypes) {
-    var UserAccount = sequelize.define("UserAccount", {
+    var Passport = sequelize.define("Passport", {
       emailaddress: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -15,5 +15,5 @@ module.exports = function(sequelize, DataTypes) {
         len: [8]
       },
     });
-    return UserAccount;
+    return Passport;
   };
