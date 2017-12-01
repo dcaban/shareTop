@@ -17,12 +17,14 @@ module.exports = function (app) {
     
     db.starbucks.findAll({
       where: {
-        city: "orlando"
+        State:  "FL"
       }
 
     }).then(function(results){
       res.json(results)
     })
+
+    
 
     
   });
