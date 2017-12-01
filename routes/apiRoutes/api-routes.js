@@ -12,7 +12,9 @@ var app = express();
 
 // Routes
 // =============================================================
+
 module.exports = function (app) {
+  //display starbucks locations information
   app.get("/api/locations", function (req, res) {
     
     db.starbucks.findAll({
@@ -23,12 +25,17 @@ module.exports = function (app) {
     }).then(function(results){
       res.json(results)
     })
-
-    
-
-    
   });
+  //display search results for avaliable equipment
 
+  app.get("/api/find", function (req, res) {
+    
+    db.Equipment.findAll({
+
+    }).then(function(results){
+      res.json(results)
+    })
+  });
   // Display ALL equipment in database[shareTop]
   // ***😊This api function works - 11/30/2017
   // app.get("/api/:equipment", function(req, res) {
