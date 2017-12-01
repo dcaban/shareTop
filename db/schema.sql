@@ -4,7 +4,7 @@ USE shareTop;
 
 DROP TABLE IF EXISTS Equipment;
 CREATE TABLE Equipment (
-	id INT AUTO_INCREMENT NOT NULL, 
+	eqid INT AUTO_INCREMENT NOT NULL, 
 	model VARCHAR (50) DEFAULT NULL,
 	speed INT (11) DEFAULT NULL,
 	ram VARCHAR (10) DEFAULT NULL,
@@ -42,15 +42,17 @@ CREATE TABLE Customer (
     PRIMARY KEY (emailaddress)
 );
 
-DROP TABLE IF EXISTS Rental;
-CREATE TABLE Rental (
-	rental_id INT AUTO_INCREMENT NOT NULL,
-	rental_date DATE,
+DROP TABLE IF EXISTS Transactions;
+CREATE TABLE Transactions (
+	trans_id INT AUTO_INCREMENT NOT NULL,
+	trans_date DATE,
 	inventory_id INT,
-	username VARCHAR (255),
+	owner_email VARCHAR (255),
 	return_date DATE,
+	trans_status VARCHAR (25),
+	customer_email VARCHAR (255), 
 	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (rental_id)
+	PRIMARY KEY (trans_id)
 	-- FOREIGN KEY (emailaddress)
 );
 
@@ -66,11 +68,11 @@ CREATE TABLE Payment (
 	-- FOREIGN KEY (emailaddress)
 );
 
-DROP TABLE IF EXISTS Status;
-CREATE TABLE Status (
-	status_id INT AUTO_INCREMENT NOT NULL,
-	open BOOLEAN DEFAULT NULL,
-    closed BOOLEAN DEFAULT NULL,
-    pending BOOLEAN DEFAULT NULL,
-    PRIMARY KEY (status_id)
-);
+-- DROP TABLE IF EXISTS Status;
+-- CREATE TABLE Status (
+-- 	status_id INT AUTO_INCREMENT NOT NULL,
+-- 	open BOOLEAN DEFAULT NULL,
+--     closed BOOLEAN DEFAULT NULL,
+--     pending BOOLEAN DEFAULT NULL,
+--     PRIMARY KEY (status_id)
+-- );
