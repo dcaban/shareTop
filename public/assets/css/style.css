@@ -1,5 +1,10 @@
-
-
+.navbar{
+    background-color:  rgba(63,191,191, .8) !important;
+}
+.parallax-container {
+    height: 900px;
+  }
+  
 .datepicker-day-button {
     color: black;
 }
@@ -43,7 +48,7 @@ nav i.material-icons {
     z-index: 10003 !important;
 }
 body {
-    background-color: lightsteelblue;
+    background-color: whitesmoke;
 }
 
 .model-overlay{
@@ -101,6 +106,22 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     line-height: 30px;
 }
 
+.adminButtons{
+    padding: 0px;
+    margin: 0px;
+}
+
+.cardButtons{
+    padding-bottom: 0px !important;
+}
+
+.sierra{
+    max-height: 300px;
+}
+
+.security_content{
+    padding: 60px !important;
+}
 
 @media only screen and (min-width: 992px) {
     #maincontent{
@@ -149,6 +170,11 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     } 
 
 }
+
+    .npr{
+        margin-top: 70px;
+        max-width: 550px;
+    }
 
 
 @media only screen and (max-width: 992px) {

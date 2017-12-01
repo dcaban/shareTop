@@ -6,6 +6,9 @@ var router = express.Router();
 // Create all our routes and set up logic within those routes where required.
 router.get("/signup", function(req, res) {
     res.render("createUser");
+  })
+  .post((req, res, next) => { //post createUser form data
+    console.log('req.body', req.body);
   });
   router.get("/", function(req, res) {
     res.render("index");
@@ -20,6 +23,16 @@ router.get("/signup", function(req, res) {
   router.get("/admin", function(req, res) {
     res.render("admin");
   });
+  router.get("/addequipment", function(req, res) {
+    res.render("addequipment");
+  });
+  router.get("/security", function(req, res) {
+    res.render("security");
+  });
+  router.get("/edit", function(req, res) {
+    res.render("edit");
+  });
+
 
 // Export routes for server.js to use.
 module.exports = router;
