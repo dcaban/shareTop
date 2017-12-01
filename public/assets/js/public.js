@@ -35,11 +35,10 @@ $( document ).ready(function(){
         $('.carousel').carousel('next');
         }, 6000);
 
-
         //On click on button function that calls post function with signUp form data
-          $(".button").on('click', function (event) {
-            event.preventDefault();
-          });
+          // $(".button").on('click', function (event) {
+          //   event.preventDefault();
+          // });
         
         //
               
@@ -69,3 +68,4 @@ $( document ).ready(function(){
 
        //ajax post
 
+      // });
