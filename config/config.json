@@ -2,7 +2,7 @@
 
     "development": {
       "username": "root",
-      "password": "1234",
+      "password": "",
       "database": "shareTop",
       "host": "127.0.0.1",
       "dialect": "mysql"
@@ -15,10 +15,7 @@
       "dialect": "mysql"
     },
     "production": {
-      "username": "root",
-      "password": "1234",
-      "database": "database_production",
-      "host": "127.0.0.1",
+      "use_env_variable": "JAWSDB_URL",
       "dialect": "mysql"
     }
 }

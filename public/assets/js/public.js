@@ -1,4 +1,6 @@
 $( document ).ready(function(){
+      
+  //materialize javascript
         $('.sidenav').sidenav();
         $('select').select();
 
