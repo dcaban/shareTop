@@ -1,5 +1,4 @@
 $( document ).ready(function(){
-  //javascrpt for materialize ui
         $('.sidenav').sidenav();
         $('select').select();
 
@@ -35,20 +34,7 @@ $( document ).ready(function(){
         setInterval(function(){
         $('.carousel').carousel('next');
         }, 6000);
-        
-        $('.fixed-action-btn').floatingActionButton({
-          toolbarEnabled: true
-        });
 
-<<<<<<< HEAD
-        $(document).ready(function(){
-          $('.parallax').parallax();
-        });
-       
-             
-
-=======
->>>>>>> 9b91e510aaf6bfd291d1b487743165e495c98306
         //On click on button function that calls post function with signUp form data
           // $(".button").on('click', function (event) {
           //   event.preventDefault();
@@ -81,6 +67,5 @@ $( document ).ready(function(){
        //make values object
 
        //ajax post
-      
 
       // });
