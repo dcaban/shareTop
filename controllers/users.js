@@ -1,3 +1,4 @@
+
 //=====//
 //====//
 //=====//
@@ -26,7 +27,7 @@ module.exports = {
         // console.log(req.body);
         console.log('Called: userController.signUp()');
         console.log('Validation schema results');
-     
+        //input error message 
         const result = Joi.validate(req.body, userSchema);
         console.log(result);
         if (result.error) {
@@ -34,7 +35,9 @@ module.exports = {
            
             res.redirect('/signup'); //reload create user form page.
             return; 
-        }   
+        }
+        
+        //post sequalize functions
     },
 
     signIn: async (req, res, next) => {
