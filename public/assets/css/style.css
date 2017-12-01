@@ -4,7 +4,7 @@
 .parallax-container {
     height: 900px;
   }
-  
+
 .datepicker-day-button {
     color: black;
 }
@@ -123,6 +123,11 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     padding: 60px !important;
 }
 
+#map {
+    height: 400px;
+    width: 100%;
+  }
+
 @media only screen and (min-width: 992px) {
     #maincontent{
     position: absolute !important;
@@ -207,4 +212,5 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
         width: 100%;
     }
 }
+
 
