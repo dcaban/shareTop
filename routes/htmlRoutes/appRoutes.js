@@ -32,6 +32,12 @@ router.get("/signup", function(req, res) {
   router.get("/edit", function(req, res) {
     res.render("edit");
   });
+  router.get("/tech", function(req, res) {
+    res.render("tech");
+  });
+  router.get("/next", function(req, res) {
+    res.render("next");
+  });
 
 
 // Export routes for server.js to use.
