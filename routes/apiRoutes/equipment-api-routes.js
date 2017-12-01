@@ -19,7 +19,6 @@ module.exports = function(app) {
     }).then(function(results) {
       res.json(dbEquipment);
     });
-  };
 
   app.get("/api/equipment/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
