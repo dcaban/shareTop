@@ -7,6 +7,8 @@
 
 // Requiring our Todo model
 var db = require("../../models");
+var express = require("express");
+var app = express();
 
 // Routes
 // =============================================================
@@ -14,13 +16,13 @@ module.exports = function(app) {
 
   // Display ALL equipment in database[shareTop]
   // ***😊This api function works - 11/30/2017
-  app.get("/api/:equipment", function(req, res) {
-    db.Equipment.create({
-      model: req.body.model
-    }).then(function(results) {
-      res.end();
-    });
-  });
+  // app.get("/api/:equipment", function(req, res) {
+  //   db.Equipment.findAll({})
+  //     model: req.body.model
+  //   }).then(function(results) {
+  //     res.end();
+  //   });
+  // };
 
   // Add equipment
   // ***Receives "Cannot POST /api/equipmenthp" error in Postman - 11/30/2017
@@ -254,5 +256,4 @@ module.exports = function(app) {
       //   res.json(dbPost);
       // });
     });
-
-};
+  }
