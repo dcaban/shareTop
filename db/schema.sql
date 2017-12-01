@@ -4,7 +4,7 @@ USE shareTop;
 
 DROP TABLE IF EXISTS Equipment;
 CREATE TABLE Equipment (
-	id INT AUTO_INCREMENT NOT NULL, 
+	eqid INT AUTO_INCREMENT NOT NULL, 
 	model VARCHAR (50) DEFAULT NULL,
 	speed INT (11) DEFAULT NULL,
 	ram VARCHAR (10) DEFAULT NULL,
@@ -14,7 +14,8 @@ CREATE TABLE Equipment (
 	routeName VARCHAR (45) DEFAULT NULL,
 	createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (id)
+    id INT,
+	PRIMARY KEY (eqid)
 	-- FOREIGN KEY (emailaddress)
 );
 
@@ -23,11 +24,15 @@ CREATE TABLE Passport (
 	userID INT (11) NOT NULL AUTO_INCREMENT,
 	emailaddress VARCHAR (255),
 	password VARCHAR (50),
+    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    id INT,
 	PRIMARY KEY (userID)
 );
 
 DROP TABLE IF EXISTS Customer;
 CREATE TABLE Customer (
+	customer_id INT AUTO_INCREMENT NOT NULL,
 	emailaddress VARCHAR (255),
 	first_name VARCHAR (100),
 	last_name VARCHAR (100),	
@@ -39,18 +44,26 @@ CREATE TABLE Customer (
 	postal_code VARCHAR (5),
 	phone VARCHAR (11),
 	last_update timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (emailaddress)
+    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    id INT,
+    PRIMARY KEY (customer_id)
 );
 
-DROP TABLE IF EXISTS Rental;
-CREATE TABLE Rental (
-	rental_id INT AUTO_INCREMENT NOT NULL,
-	rental_date DATE,
+DROP TABLE IF EXISTS Transactions;
+CREATE TABLE Transactions (
+	trans_id INT AUTO_INCREMENT NOT NULL,
+	trans_date DATE,
 	inventory_id INT,
-	username VARCHAR (255),
+	owner_email VARCHAR (255),
 	return_date DATE,
+	trans_status VARCHAR (25),
+	customer_email VARCHAR (255), 
 	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (rental_id)
+    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    id INT,
+	PRIMARY KEY (trans_id)
 	-- FOREIGN KEY (emailaddress)
 );
 
@@ -62,6 +75,9 @@ CREATE TABLE Payment (
 	amount DECIMAL,
 	payment_date DATE,
 	last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    id INT,
 	PRIMARY KEY (payment_id)
 	-- FOREIGN KEY (emailaddress)
 );
@@ -72,5 +88,8 @@ CREATE TABLE Status (
 	open BOOLEAN DEFAULT NULL,
     closed BOOLEAN DEFAULT NULL,
     pending BOOLEAN DEFAULT NULL,
+    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    id INT,
     PRIMARY KEY (status_id)
 );
