@@ -12,8 +12,30 @@ var app = express();
 
 // Routes
 // =============================================================
-module.exports = function(app) {
 
+module.exports = function (app) {
+  //display starbucks locations information
+  app.get("/api/locations", function (req, res) {
+    
+    db.starbucks.findAll({
+      where: {
+        State:  "FL"
+      }
+
+    }).then(function(results){
+      res.json(results)
+    })
+  });
+  //display search results for avaliable equipment
+
+  app.get("/api/find", function (req, res) {
+    
+    db.Equipment.findAll({
+
+    }).then(function(results){
+      res.json(results)
+    })
+  });
   // Display ALL equipment in database[shareTop]
   // ***😊This api function works - 11/30/2017
   app.get("/api/:equipment", function(req, res) {
@@ -23,6 +45,7 @@ module.exports = function(app) {
       res.end();
     });
   };
+
 
   // Displays ALL equipment that is linked up with users email address.
   app.get("/api/:email", function(req, res) {
@@ -91,28 +114,27 @@ module.exports = function(app) {
   //       });
   //     });
 
+
   // DELETE route for deleting equipment
   // ***😊This api function works - 11/30/2017
-  app.delete("/api/equipment/:id", function(req, res) {
+  app.delete("/api/equipment/:id", function (req, res) {
     db.Equipment.destroy({
       where: {
         id: req.params.id
       }
-    })
-    .then(function(dbEquipment) {
+    }).then(function (dbEquipment) {
       res.json(dbEquipment);
     });
   });
 
   // DELETE route for deleting user account in Passport
   // 😊This api function works - 11/30/2017
-  app.delete("/api/passport/:id", function(req, res) {
+  app.delete("/api/passport/:id", function (req, res) {
     db.Passport.destroy({
       where: {
         id: req.params.id
       }
-    })
-    .then(function(dbPassport) {
+    }).then(function (dbPassport) {
       res.json(dbPassport);
     });
   });
@@ -120,97 +142,86 @@ module.exports = function(app) {
   // PUT route for updating equipment
   // ***Receives "Cannot PUT /api/equipment" error in Postman - 11/30/2017
   // ***Receives "PUT /api/equipment 404 2.172 ms - 152" in terminal - 11/30/2017
-  app.put("/api/equpiment", function(req, res) {
-    db.Equipment.update(req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      })
-    .then(function(dbEquipment) {
+  app.put("/api/equpiment", function (req, res) {
+    db.Equipment.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function (dbEquipment) {
       res.json(dbEquipment);
     });
   });
 
   // PUT route for updating password in useraccount in Passport
-  app.put("/api/passport", function(req, res) {
-    db.Passport.update(req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      })
-    .then(function(dbPassport) {
+  app.put("/api/passport", function (req, res) {
+    db.Passport.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function (dbPassport) {
       res.json(dbPassport);
     });
   });
 
   // PUT route for updating user account in Passport
-  app.put("/api/passport", function(req, res) {
-    db.Passport.update(req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      })
-    .then(function(dbUserAccount) {
+  app.put("/api/passport", function (req, res) {
+    db.Passport.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function (dbUserAccount) {
       res.json(dbUserAccount);
     });
   });
 
-    // Search for specific equipment (or all equipment) then provides JSON
-    // ***😊This displays all equipment. 🙁Working on figuring out how to get specific equipment to display. - 11/30/2017
-    app.get("/api/:equipment?", function(req, res) {
-      
-          // If the user provides a specific piece of equipment in the URL...
-          if (req.params.equipment) {
-      
-            // Then display the JSON for ONLY that equipment.
-            // (Note how we're using the ORM here to run our searches)
-            db.Equipment.findOne({
-              where: {
-                routeName: req.params.equipment
-              }
-            }).then(function(result) {
-              return res.json(result);
-            });
-          }
-      
-          // Otherwise...
-          else {
-            // Otherwise display the data for all of the equipment.
-            // (Note how we're using Sequelize here to run our searches)
-            db.Equipment.findAll({})
-              .then(function(result) {
-                return res.json(result);
-              });
-          }
-      
-        });
-      
-    // Get route for returning posts of a specific model
-    app.get("/api/posts/model/:model", function(req, res) {
-      db.Post.findAll({
+  // Search for specific equipment (or all equipment) then provides JSON
+  // ***😊This displays all equipment. 🙁Working on figuring out how to get specific equipment to display. - 11/30/2017
+  app.get("/api/:equipment?", function (req, res) {
+
+    // If the user provides a specific piece of equipment in the URL...
+    if (req.params.equipment) {
+
+      // Then display the JSON for ONLY that equipment.
+      // (Note how we're using the ORM here to run our searches)
+      db.Equipment.findOne({
         where: {
-          model: req.params.model
+          routeName: req.params.equipment
         }
-      })
-      .then(function(dbPost) {
-        res.json(dbPost);
+      }).then(function (result) {
+        return res.json(result);
+      }// Otherwise...
+      );
+    } else {
+      // Otherwise display the data for all of the equipment.
+      // (Note how we're using Sequelize here to run our searches)
+      db.Equipment.findAll({}).then(function (result) {
+        return res.json(result);
       });
+    }
+
+  });
+
+  // Get route for returning posts of a specific model
+  app.get("/api/posts/model/:model", function (req, res) {
+    db.Post.findAll({
+      where: {
+        model: req.params.model
+      }
+    }).then(function (dbPost) {
+      res.json(dbPost);
     });
-  
-    // Get route for retrieving a single post
-    app.get("/api/posts/:id", function(req, res) {
-      db.Post.findOne({
-        where: {
-          id: req.params.id
-        }
-      })
-      .then(function(dbPost) {
-        res.json(dbPost);
-      });
+  });
+
+  // Get route for retrieving a single post
+  app.get("/api/posts/:id", function (req, res) {
+    db.Post.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbPost) {
+      res.json(dbPost);
     });
+
   
     // // POST route for saving a new post
     // app.post("/api/posts", function(req, res) {
@@ -235,20 +246,10 @@ module.exports = function(app) {
       .then(function(dbPost) {
         res.json(dbPost);
       });
+
     });
-  
-    // PUT route for updating posts
-    app.put("/api/posts", function(req, res) {
-      db.Post.update(req.body,
-        {
-          where: {
-            id: req.body.id
-          }
-        })
-      .then(function(dbPost) {
-        res.json(dbPost);
-      });
-    }); 
+  });
+
 
   //   //post for a new search
   //   app.post("/api/search", function(req, res) {
