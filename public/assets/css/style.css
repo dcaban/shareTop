@@ -62,12 +62,12 @@ body {
 .under{
     position: absolute !important;
     top: 0px;
-    height: 900px !important;
+    height: 700px !important;
     width: 100%;
     z-index: 1!important;
     /* background-color: black;
     opacity: 0.15; */
-    background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, 0));
+    background: linear-gradient(rgba(0, 0, 0, .30), rgba(0, 0, 0, 0));
 }
 .c1
 {
