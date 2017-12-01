@@ -59,7 +59,7 @@ module.exports = {
     },
 
     profileUpdate: async (req, res, next) => {
-        console.log('Called: userCOntroller.profileUpdate()');
+        console.log('Called: userController.profileUpdate()');
     }
 }
 
