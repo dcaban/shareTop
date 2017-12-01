@@ -26,7 +26,9 @@ router.get("/signup", function(req, res) {
   router.get("/security", function(req, res) {
     res.render("security");
   });
-  
+  router.get("/edit", function(req, res) {
+    res.render("edit");
+  });
 
 
 // Export routes for server.js to use.

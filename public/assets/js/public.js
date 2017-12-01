@@ -40,6 +40,11 @@ $( document ).ready(function(){
           toolbarEnabled: true
         });
 
+        $(document).ready(function(){
+          $('.parallax').parallax();
+        });
+       
+             
 
         //On click on button function that calls post function with signUp form data
           $(".button").on('click', function (event) {
