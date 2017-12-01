@@ -4,7 +4,7 @@
 .parallax-container {
     height: 900px;
   }
-  
+
 .datepicker-day-button {
     color: black;
 }
@@ -59,7 +59,16 @@ body {
   background-size : cover;
   background-position: center;
 }
-
+.under{
+    position: absolute !important;
+    top: 0px;
+    height: 700px !important;
+    width: 100%;
+    z-index: 1!important;
+    /* background-color: black;
+    opacity: 0.15; */
+    background: linear-gradient(rgba(0, 0, 0, .30), rgba(0, 0, 0, 0));
+}
 .c1
 {
   background-image : url(' ../img/gardentop.jpeg');
@@ -123,8 +132,14 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     padding: 60px !important;
 }
 
+#map {
+    height: 400px;
+    width: 100%;
+  }
+
 @media only screen and (min-width: 992px) {
     #maincontent{
+    z-index: 2;
     position: absolute !important;
     top: 750px !important;
     background-color: white;
@@ -201,10 +216,12 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     opacity: 0.93;
 }
     #maincontent{
+        z-index: 2;
         position: absolute !important;
         top: 850px !important;
         background-color: white;
         width: 100%;
     }
 }
+
 

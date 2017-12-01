@@ -1,9 +1,12 @@
 $( document ).ready(function(){
+      
+  //materialize javascript
         $('.sidenav').sidenav();
         $('select').select();
 
 
         var isLoggedIn = sessionStorage.setItem("isLoggedOn", false);
+        var currUser = sessionStorage.setItem("currUser", "empty");
 
         $('.timepicker').timepicker({
           default: 'now', // Set default time: 'now', '1:30AM', '16:30'
