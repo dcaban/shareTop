@@ -31,7 +31,7 @@ CREATE TABLE Customer (
 	emailaddress VARCHAR (255),
 	first_name VARCHAR (100),
 	last_name VARCHAR (100),	
-	address_id INT,
+	-- address_id INT,
 	address VARCHAR (255),
 	address2 VARCHAR (255),
 	city VARCHAR (100),

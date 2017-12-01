@@ -22,7 +22,7 @@ module.exports = function(app) {
   //   }).then(function(results) {
   //     res.end();
   //   });
-  // };
+
 
   // Add equipment
   // ***Receives "Cannot POST /api/equipmenthp" error in Postman - 11/30/2017
