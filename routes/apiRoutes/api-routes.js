@@ -14,6 +14,20 @@ var app = express();
 // =============================================================
 
 module.exports = function (app) {
+  app.post("/api/request", function (req, res) {
+    
+        console.log("stupid:");
+        console.log(req.body.requestid);
+    
+        // db.Equipment.update({
+        //   where: {
+        //     Id:  req.body[0]
+        //   }
+    
+        // }).then(function(results){
+        //   res.json(results)
+        // })
+      });
   //display starbucks locations information
   app.get("/api/locations", function (req, res) {
     

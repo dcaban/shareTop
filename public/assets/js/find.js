@@ -17,14 +17,14 @@ function latLong() {
          var cardEnd= "</p></div><div class='card-action'><button name='requestbutton"+[i+1]+"' class='btn-flat orange-text' id='request"+[i+1]+"' value=' "+id+" '>Request Sharetop</button></div></div></div></div>"
 
          $("#searchresults").append( cardTitle + cardContent + cardEnd +"");
-         console.log(id)
+         console.log(found)
    }
    
    $("#request1").click(function(event) {
     event.preventDefault();
    console.log( "button was clicked" );
 
-     var newRequest =  $('button[name=requestbutton1]').val();
+     var newRequest = {requestid : $('button[name=requestbutton1]').val()}
     
      
      console.log(newRequest);
