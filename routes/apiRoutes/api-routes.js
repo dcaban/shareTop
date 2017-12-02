@@ -67,11 +67,23 @@ module.exports = function (app) {
     });
   });
 
+<<<<<<< HEAD
   // Add user account in passport
   app.post("/api/passport", function (req, res) {
 
     console.log("Passport Data:");
     console.log(req.body);
+=======
+//====================THROWS ERR=================//
+  // // Displays ALL equipment that is linked up with users email address.
+  // app.get("/api/:email", function(req, res) {
+  //     db.Equipment.findAll({})
+  //       model: req.params.email
+  //     }).then(function(results) {
+  //       res.end();
+  //     });
+//=============================================//
+>>>>>>> cba4f80cf740ec9244f79cd1aa8508d182b4649d
 
     db.Passport.create({emailaddress: req.body.emailaddress, password: req.body.password}).then(function (results) {
       // `results` here would be the newly created user.
