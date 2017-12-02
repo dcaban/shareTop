@@ -1,5 +1,6 @@
 {{!-- login html to render --}}
 {{!-- create user html to render --}}
+{{> navbar}}
 <div class="container">
     <div class="row">
         <form class="card-panel col s12" id="loginForm" action="users/signin" method="POST">
@@ -23,8 +24,8 @@
       <label for="test5">I have read and agree to the terms of use</label>
     </p>
     <div class="center-align">
-    <button class="btn waves-effect waves-light" type="submit" id="loginBtn" name="action">Submit
-    <i class="material-icons right">send</i>
+    <a href="/homeauth" class="white-text"><button  class="btn waves-effect waves-light" type="submit" id="loginBtn" name="action">Submit
+    <i class="material-icons right">send</i></a>
   </button>
   <br>
   <br>
@@ -37,4 +38,3 @@
   
 
     </div>
- 

@@ -38,6 +38,9 @@ router.get("/signup", function(req, res) {
   router.get("/next", function(req, res) {
     res.render("next");
   });
+  router.get("/homeauth", function(req, res) {
+    res.render("loggedinhome");
+  });
 
 
 // Export routes for server.js to use.

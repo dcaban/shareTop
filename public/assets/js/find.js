@@ -12,9 +12,9 @@ function latLong() {
          var foundRam = "   | Ram: " + found[i].ram + "G";
          var foundScreen = " | Screen Size: " + found[i].screen_size +" inch"+ h;
          var foundDescription = found[i].description;
-         var cardTitle = "<div class='col s12 l6 xl4'><div class='card searchcard'><div class='card-image'><img src='/assets/img/handbook.jpeg'><span class='card-title'>" + name + "</span> </div><div class='card-content'><p>"
+         var cardTitle = "<div class='col s12 l6 xl4'><div class='card searchcard'><div class='card-image'><img src='/assets/img/handbook.jpeg'><span class='card-title'>" + name + "</span> </div><div class='card-content search-card-content'><p>"
          var cardContent = foundModels + foundSpeed + foundRam + foundScreen + foundDescription;
-         var cardEnd= "</p></div><div class='card-action'><button name='requestbutton"+[i+1]+"' class='btn-flat orange-text' id='request"+[i+1]+"' value=' "+id+" '>Request Sharetop</button></div></div></div></div>"
+         var cardEnd= "</p></div><div class='card-action'><a href='/admin'>Request</a></div></div></div></div>"
 
          $("#searchresults").append( cardTitle + cardContent + cardEnd +"");
          console.log(found)

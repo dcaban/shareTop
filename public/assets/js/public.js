@@ -44,8 +44,17 @@ $( document ).ready(function(){
           // });
         
         //
+        $('#goneclick').click(function(event) {
+          event.preventDefault();
+          jQuery('#gone').hide();
+        })
+
+        $("#loginBtn").on('click', function (event) {
+          window.location.href = "/admin";
+         $("#logSign").text("Dashboard");
+          });
               
-});
+})
        
        //onclick for form button
       
@@ -72,3 +81,5 @@ $( document ).ready(function(){
        //ajax post
 
       // });
+
+  

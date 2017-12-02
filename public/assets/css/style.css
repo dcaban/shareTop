@@ -183,7 +183,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
         top:0px; 
         height: 850px;
     } 
-    .card-content{
+    .search-card-content{
         height: 200px !important;
         overflow: scroll;
         
