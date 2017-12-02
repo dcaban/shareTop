@@ -7,6 +7,13 @@ const router = require('express-promise-router')();
 const userController = require('../../controllers/users');
 
 //Authentication routing
+
+//gets all user emails
+
+//checks if email input for account creation already exists
+if (req.params.email) {
+
+}
 router.route('/signup')
     .post(userController.signUp);
 
