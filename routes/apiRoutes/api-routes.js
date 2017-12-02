@@ -46,14 +46,15 @@ module.exports = function (app) {
     });
   };
 
-
-  // Displays ALL equipment that is linked up with users email address.
-  app.get("/api/:email", function(req, res) {
-      db.Equipment.findAll({})
-        model: req.body.email
-      }).then(function(results) {
-        res.end();
-      });
+//====================THROWS ERR=================//
+  // // Displays ALL equipment that is linked up with users email address.
+  // app.get("/api/:email", function(req, res) {
+  //     db.Equipment.findAll({})
+  //       model: req.params.email
+  //     }).then(function(results) {
+  //       res.end();
+  //     });
+//=============================================//
 
   // // Add equipment
   // // ***Receives "Cannot POST /api/equipmenthp" error in Postman - 11/30/2017

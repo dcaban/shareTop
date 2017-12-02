@@ -24,13 +24,16 @@ const userSchema = Joi.object().keys({
 });
 
 //hashing function
-var hashPassword = async (password) => {
+let hashPassword = async (password) => {
     try {
-        const salt = bcrypt.genSalt(10);
+        console.log('Hashing...');
+        const salt = await bcrypt.genSalt(10);
+        console.log('salt:', salt);
+        return await bcrypt.hash(password, salt);
     } catch (error) {
-
+        throw new Error ('Hashing failed', error);
     }
-}
+};
 
 
 module.exports = {
@@ -44,12 +47,14 @@ module.exports = {
         const result = Joi.validate(req.body, userSchema);
         console.log(result);
         if (result.error) {
-            //code for display error message           
+            console.log('error!');//code for display error message           
             res.redirect('/signup'); //reload create user form page.
             return; 
         }
         
         //check if email exists//
+        console.log('Check if email exists.');
+        console.log(req.body.emailaddress);
         var emailChecker = db.Customer.findOne({
             where: {
                 emailaddress: req.body.emailaddress
@@ -58,14 +63,18 @@ module.exports = {
             res.json(dbCustomer);
         });
 
+        console.log('Results', emailChecker);
+
         if (emailChecker) {
-            //account already exists error message
+            console.log('email exists!')//account already exists error message
             res.redirect('/signup');//redirect to signUp
             return;
         } 
 
+        console.log('Email is unique. Go on to hashing PW.');
         //password hashing
-
+        const hash = await hashPassword(req.body.password);
+        console.log('hash', hash);
 
         //post: create user sequalize functions
         db.Customer.create(req.body).then(function(dbCustomer) {
