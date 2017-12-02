@@ -2,11 +2,7 @@
 
     "development": {
       "username": "root",
-<<<<<<< HEAD
-      "password": "root",
-=======
       "password": "",
->>>>>>> 3a3e6ef73b608ceb602c9cbb7b9b84ff1bbae5ef
       "database": "shareTop",
       "host": "127.0.0.1",
       "dialect": "mysql"
