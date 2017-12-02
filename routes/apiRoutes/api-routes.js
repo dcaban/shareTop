@@ -68,11 +68,13 @@ module.exports = function (app) {
   });
 
 
+
   // Add user account in passport
   app.post("/api/passport", function (req, res) {
 
     console.log("Passport Data:");
     console.log(req.body);
+
 
 //====================THROWS ERR=================//
   // // Displays ALL equipment that is linked up with users email address.
@@ -83,6 +85,7 @@ module.exports = function (app) {
   //       res.end();
   //     });
 //=============================================//
+
 
 
     db.Passport.create({emailaddress: req.body.emailaddress, password: req.body.password}).then(function (results) {
