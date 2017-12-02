@@ -183,6 +183,12 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
         top:0px; 
         height: 850px;
     } 
+    .card-content{
+        height: 200px !important;
+        overflow: scroll;
+        
+    }
+
 
 }
 
@@ -190,6 +196,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
         margin-top: 70px;
         max-width: 550px;
     }
+    
 
 
 @media only screen and (max-width: 992px) {
@@ -199,6 +206,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
         padding-bottom: 0px !important;
         border-radius:35px;
         line-height: 40px;
+    
     }
     
     .search{
